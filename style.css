@@ -705,3 +705,52 @@ button {
     color: #8c542b;
     border-bottom: 2px solid #8c542b;
 }
+
+
+
+
+
+.services-section {
+    text-align: center;
+    padding: 50px;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.service-box {
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.service-box h5 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.service-box p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.all-treatments-btn {
+    margin-top: 30px;
+}
+
+.all-treatments-btn a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px 25px;
+    background-color: #4a6345;
+    border-radius: 30px;
+}
+
+.all-treatments-btn a:hover {
+    background-color: #3e523c;
+}
