@@ -1,0 +1,600 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*, html {
+    scroll-behavior: smooth;
+}
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+
+/*DEFAULT*/
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #FFFFFF; /* White */
+}
+
+a {
+    text-decoration: none;
+    transition: 0.5s;
+    color: #676A71; /* Dark gray */
+}
+
+/*HEADER*/
+header {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+}
+
+.banner {
+    background-color: #CACBD0; /* Lightest gray */
+    width: 100%;
+    padding: 10px 0;
+}
+
+.banner .section-right {
+    float: right;
+}
+
+.banner a {
+    margin: 0 10px;
+    color: #0041da; /* Dark gray */
+    text-decoration: none;
+    
+}
+
+.logo {
+    background: #CACBD0; /* Lightest gray */
+    color: #676A71; /* Dark gray */
+    padding: 20px;
+    padding-left: 20px;
+    width: 430px;
+    position: absolute;
+    left: -20px;
+    top: 30px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.parallelogram {
+    transform: skew(-20deg);
+}
+
+.skew-fix {
+    width: 60%;
+    display: inline-block;
+    transform: skew(20deg);
+}
+.skew-fix H4{
+    font-size: x-large;
+    font-weight: 700;
+    padding-left: 10px;
+    text-shadow: 
+    -1.2px -1.2px 0 #ffffff,  
+    1.2px -1.2px 0 #ffffff,
+    -1.2px 1.2px 0 #ffffff,
+    1.2px 1.2px 0 #ffffff; /* White stroke */
+
+}
+
+.main_logo{
+    position: relative;
+    top: -30px;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    margin-left: 30px;
+}
+
+@media (max-width: 820px) {
+    .banner .section-right {
+        float: none;
+        width: 100%;
+    }
+    .banner .section-left {
+        display: none;
+    }
+}
+
+/*NAVIGATION*/
+.topnav {
+    overflow: hidden;
+    background-color: #676a71; /* Dark gray */
+   
+    
+}
+
+.topnav a {
+    float: right    ;
+    display: block;
+    color: #FFFFFF; /* White */
+    text-align: center;
+    padding: 24px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.active {
+    color: #CACBD0; /* Lightest gray */
+    margin-left: 250px;
+}
+
+.topnav .icon {
+    display: none;
+    outline: none !important;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 17px;    
+    border: none;
+    outline: none;
+    color: #FFFFFF; /* White */
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF; /* White */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-top: 2px solid #CACBD0; /* Lightest gray */
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: #676A71; /* Dark gray */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+    color: #CACBD0; /* Lightest gray */
+}
+
+.dropdown-content a:hover {
+    background-color: #E5E8ED; /* Lighter gray */
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media screen and (max-width: 820px) {
+    .topnav a, .dropdown .dropbtn {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+    .active {
+        margin-left: 0;
+    }
+    .topnav {
+        height: 50px;
+        width: 100%;
+        transition: 0.5s;
+    }
+    .topnav.responsive {
+        position: relative;
+        height: 70vh;
+        overflow-y: auto;
+    }
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .topnav.responsive .dropdown {
+        float: none;
+    }
+    .topnav.responsive .dropdown-content {
+        position: relative;
+    }
+    .topnav.responsive .dropdown .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/* HERO SECTION */
+.hero-section {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('images/ng.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+
+   
+}
+
+
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3); /* Gradient color with opacity 0.3 */
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.3), 
+        rgba(229, 232, 237, 0.3), 
+        rgba(103, 106, 113, 0.3), 
+        rgba(161, 161, 163, 0.3), 
+        rgba(202, 203, 208, 0.3)
+    );
+    z-index: 1; /* Place it below the content */
+}
+.hero-section .container {
+    text-align: right;
+}
+
+.hero-section h1 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #000000; /* Dark gray */
+    text-shadow: 
+        -1.2px -1.2px 0 #ffffff,  
+        1.2px -1.2px 0 #ffffff,
+        -1.2px 1.2px 0 #ffffff,
+        1.2px 1.2px 0 #ffffff; /* White stroke */
+}
+
+.hero-section p {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #000000; /* Dark gray */
+    text-shadow: 
+        -1.2px -1.2px 0 #ffffff,  
+        1.2px -1.2px 0 #ffffff,
+        -1.2px 1.2px 0 #ffffff,
+        1.2px 1.2px 0 #ffffff; /* White stroke */
+}
+
+
+.hero-section .btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #CACBD0; /* Lightest gray */
+    color: #676A71; /* Dark gray */
+}
+
+.hero-section .btn:hover {
+    padding: 12px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #676A71; /* Lightest gray */
+    color: #CACBD0; /* Dark gray */
+}
+
+/* Form container */
+.form-container {
+    background-color: #FFFFFF; /* White */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Video thumbnail */
+.video-thumbnail {
+    position: relative;
+}
+
+.video-thumbnail img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.video-thumbnail .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #676A71; /* Dark gray */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-button svg {
+    fill: #FFFFFF; /* White */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section-header {
+    font-size: 60px;
+    font-weight: bold;
+    font-family: "Epilogue", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 500;
+}
+.btn-custom {
+    background-color: #b68b40;
+    color: white;
+    border: none;
+}
+.btn-custom:hover {
+    background-color: #a77c35;
+}
+
+.MEDISPA_section{
+    justify-content: space-between;
+}
+
+.MEDISPA_section img{
+    height: 70vh;
+    width: 100%;
+}
+
+
+.MEDISPA_section h3{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: "Epilogue", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 500;
+}
+
+.MEDISPA_section p{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Epilogue", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 500;
+}
+
+
+
+
+.Exciting_section img{
+ height: 400px;
+ width: 850px;
+ object-fit: fill;
+ 
+}
+
+.Exciting_section h2{
+    font-size: 50px;
+
+}
+
+.Exciting_section h6{
+    font-size: 30px;
+    margin-top: 20px;
+    
+}
+
+.container{
+    margin-top: 100px;
+}
+
+
+
+
+
+.featured-treatments {
+    margin: 50px 0;
+}
+.treatment-list {
+    font-size: 18px;
+    line-height: 2;
+    cursor: pointer;
+}
+.treatment-list li {
+    list-style: none;
+    margin: 5px 0;
+}
+.treatment-list li:hover {
+    color: #007bff;
+}
+.quicklift-box {
+    background-color: rgb(64, 64, 68);
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    font-size: 18px;
+    position: relative;
+    top: -430px;
+    left: 400px;
+    width: 350px;
+    height: 350px;
+}
+.quicklift-box h3 {
+    font-family: 'Georgia', serif;
+}
+.quicklift-box a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+}
+.quicklift-image {
+    margin-top: 30px;
+}
+
+
+.quicklift-image img {
+   width: 500px;
+   height: 500px;
+   object-fit: cover;
+}
+
+
+.list_treatment{
+   padding: 10px 20px;
+   margin-top: 100px;
+}
+
+.treatment-list li {
+    margin-top: 30px;
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+/* button */
+/* From Uiverse.io by satyamchaudharydev */ 
+button {
+    width: 300px;
+    height: 56px;
+    overflow: hidden;
+    border: none;
+    color: #212831;
+    background: none;
+    position: relative;
+    padding-bottom: 2em;
+    cursor: pointer;
+  }
+  
+  button > div,
+  button > svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  
+  button:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background: currentColor;
+    transform: scaleX(0.7);
+    transition: transform 0.25s ease-out;
+  }
+  
+  button:hover:before {
+    transform: scaleX(1);
+   
+    transform-origin: bottom left;
+  }
+  
+  button .clone > *,
+  button .text > * {
+    opacity: 1;
+    font-size: 1.3rem;
+    transition: 0.2s;
+    margin-left: 4px;
+  }
+  
+  button .clone > * {
+    transform: translateY(60px);
+  }
+  
+  button:hover .clone > * {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  }
+  
+  button:hover .text > * {
+    opacity: 1;
+    transform: translateY(-60px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  }
+  
+  button:hover .clone > :nth-child(1) {
+    transition-delay: 0.15s;
+  }
+  
+  button:hover .clone > :nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  
+  button:hover .clone > :nth-child(3) {
+    transition-delay: 0.25s;
+  }
+  
+  button:hover .clone > :nth-child(4) {
+    transition-delay: 0.3s;
+  }
+  /* icon style and hover */
+  button svg {
+    width: 20px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-50deg);
+    transition: 0.2s ease-out;
+  }
+  
+  button:hover svg {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
