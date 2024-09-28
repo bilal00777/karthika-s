@@ -843,3 +843,91 @@ button {
     color: #007bff; /* Color of the symbol */
   
 }
+
+
+
+
+
+
+/* Social Media Icons Section */
+.social-icons {
+    display: flex;
+    gap: 5px; /* 5px gap between icons */
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center; /* Horizontally center the icon */
+    align-items: center; /* Vertically center the icon */
+    background-color: #676A71; /* Background color */
+    color: white; /* Icon color */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Make the background circle */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    text-decoration: none;
+}
+
+/* Hover effect */
+.social-icons a:hover {
+    background-color: #56585F; /* Slightly darker color on hover */
+}
+
+/* Remove extra gap from the last icon */
+.social-icons a:last-child {
+    margin-right: 0;
+}
+    
+
+
+
+.nav-links-footer {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+    margin-top: 20px; /* Optional: Add some margin at the top */
+}
+
+.nav-links-footer a {
+    color: black; /* Set text color to black */
+    font-size: medium; /* Set font size to small */
+    margin: 0 5px; /* Add horizontal margin (gap) of 5px */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.nav-links-footer a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+
+
+
+ /* Footer Styles */
+ .footer {
+    background-color: rgb(218, 219, 224); /* Background color */
+    color: #000000; /* Warm white color */
+    text-align: center; /* Center the text */
+    padding: 20px 0; /* Vertical padding */
+    position: relative; /* Positioning context */
+    bottom: 0; /* Align to the bottom */
+    width: 100%; /* Full width */
+    font-family: Arial, sans-serif; /* Font family */
+
+}
+
+.footer a {
+    color: #000000; /* Link color */
+    text-decoration: none; /* Remove underline */
+    margin: 0 15px; /* Horizontal margin */
+    font-size: small; /* Font size */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer .copy-right {
+    margin-top: 10px; /* Space above copyright */
+    font-size: small; /* Font size for copyright */
+}
