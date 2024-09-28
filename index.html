@@ -101,7 +101,7 @@
             </p>
             <a href="#" class="btn btn-custom">   
            
-<button>
+<button style="width: 300px;">
   <div class="text">
     <span>View</span>
     <span>Pigmentation</span>
@@ -143,7 +143,15 @@
                 <h2>Exciting News!</h2>
                 <h6>Love Glow Studio is now Ember Medical Spa. Discover a new spark in your ageless beauty and aesthetics journey.</h6>
                 <p>New features and facial rejuvenation at Ember Med Spa</p>
-                <button>learn more</button>
+                <button style="width: 120px;"> <div class="text">
+                    <span>learn</span>
+                    <span>more</span>
+                   
+                  </div>
+                  <div class="clone">
+                    <span>learn</span>
+                    <span>more</span>
+                  </div></button>
             </div>
         </div>
     </div>
@@ -152,40 +160,32 @@
 
 
 
-
-
-<div class="container">
-    <div class="row featured-treatments">
-        <!-- Left Side: Treatment List -->
-        <div class="col-md-4">
-            <div class="list_treatment">
+<div class="container container_000">
+    <div class="col-md-4">
+        <div class="list_treatment">
             <h2>Featured Treatments</h2>
-            <ul class="treatment-list">
-                <li onclick="updateContent('Emsculpt Neo', 'Body sculpting and muscle-building treatment using electromagnetic technology to achieve a toned physique.', 'https://via.placeholder.com/400x300?text=Emsculpt+Neo')">Emsculpt Neo</li>
-                <li onclick="updateContent('T-Shape 2', 'Advanced technology combining laser, radiofrequency, and vacuum for effective body contouring.', 'https://via.placeholder.com/400x300?text=T-Shape+2')">T-Shape 2</li>
-                <li onclick="updateContent('Anti-wrinkle Injections', 'Non-surgical treatment to reduce the appearance of wrinkles and fine lines.', 'https://via.placeholder.com/400x300?text=Anti-wrinkle+Injections')">Anti-wrinkle Injections</li>
-                <li onclick="updateContent('Quicklift', 'Non-invasive, pain-free facial rejuvenation treatment to tighten, lift and plump the skin with zero downtime.', 'https://via.placeholder.com/400x300?text=Quicklift')">— Quicklift</li>
+            <ul class="treatment-list" id="treatmentList">
+                <li onclick="updateContent('Emsculpt Neo', 'Body sculpting and muscle-building treatment using electromagnetic technology to achieve a toned physique.', 'https://via.placeholder.com/400x300?text=Emsculpt+Neo', this)">Emsculpt Neo</li>
+                <li onclick="updateContent('T-Shape 2', 'Advanced technology combining laser, radiofrequency, and vacuum for effective body contouring.', 'https://via.placeholder.com/400x300?text=T-Shape+2', this)">T-Shape 2</li>
+                <li onclick="updateContent('Anti-wrinkle Injections', 'Non-surgical treatment to reduce the appearance of wrinkles and fine lines.', 'https://via.placeholder.com/400x300?text=Anti-wrinkle+Injections', this)">Anti-wrinkle Injections</li>
+                <li onclick="updateContent('Quicklift', 'Non-invasive, pain-free facial rejuvenation treatment to tighten, lift and plump the skin with zero downtime.', 'https://via.placeholder.com/400x300?text=Quicklift', this)">Quicklift</li>
             </ul>
-        </div>
-        </div>
+        </div>  
+    </div>
 
-        <!-- Right Side: Content Display -->
-        <div class="col-md-8">
-            <div class="quicklift-image">
-                <!-- Dynamic Image -->
-                <img id="treatmentImage" src="https://via.placeholder.com/400x300?text=Quicklift" alt="Treatment Image" class="img-fluid">
-            </div>
-            <div class="quicklift-box">
-                <!-- Dynamic Title and Description -->
-                <h3 id="treatmentTitle">Quicklift</h3>
-                <p id="treatmentDescription">Non-invasive, pain-free facial rejuvenation treatment to tighten, lift and plump the skin with zero downtime.</p>
-                <a href="#" id="treatmentLink">DISCOVER QUICKLIFT</a>
-            </div>
+    <div class="col-md-8">
+        <div class="quicklift-image" id="imageContainer">
+            <img id="treatmentImage" src="https://via.placeholder.com/400x300?text=Quicklift" alt="Treatment Image" class="img-fluid">
+        </div>
+        <div class="quicklift-box" id="contentContainer">
+            <h3 id="treatmentTitle">Quicklift</h3>
+            <p id="treatmentDescription">Non-invasive, pain-free facial rejuvenation treatment to tighten, lift and plump the skin with zero downtime.</p>
+            <a href="#" id="treatmentLink">DISCOVER QUICKLIFT</a>
         </div>
     </div>
 </div>
 
-
+<!-- 
 <div class="container  con_form">
     <div class="row">
         <div class="col-md-6 ">
@@ -240,8 +240,8 @@
             </div>
         </div>
     </div>
-</div>
-</div>
+</div> -->
+
 
 
 
@@ -315,23 +315,52 @@ function myFunction() {
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
  <script>
-    // Function to update the entire right-side content dynamically
-    function updateContent(title, description, imageUrl) {
-        // Update the title
-        document.getElementById('treatmentTitle').innerText = title;
-        
-        // Update the description
-        document.getElementById('treatmentDescription').innerText = description;
-        
-        // Update the image source
-        document.getElementById('treatmentImage').src = imageUrl;
-        
-        // Update the link text based on the treatment
-        document.getElementById('treatmentLink').innerText = 'DISCOVER ' + title.toUpperCase();
+    // Function to handle the content switch with animations
+    function updateContent(title, description, imageUrl, clickedElement) {
+        var imageContainer = document.getElementById('imageContainer');
+        var contentContainer = document.getElementById('contentContainer');
+        var treatmentImage = document.getElementById('treatmentImage');
+
+        // Handle active list item
+        var treatmentList = document.getElementById('treatmentList');
+        var items = treatmentList.getElementsByTagName('li');
+
+        // Remove 'active' class from all list items
+        for (var i = 0; i < items.length; i++) {
+            items[i].classList.remove('active');
+        }
+
+        // Add 'active' class to the clicked item
+        clickedElement.classList.add('active');
+
+        // First, add fade-out class to both image and content
+        imageContainer.classList.add('fade-out');
+        contentContainer.classList.add('fade-out');
+
+        // Wait for the fade-out animation to finish (500ms)
+        setTimeout(function() {
+            // Update content after fade-out
+            document.getElementById('treatmentTitle').innerText = title;
+            document.getElementById('treatmentDescription').innerText = description;
+            document.getElementById('treatmentImage').src = imageUrl;
+            document.getElementById('treatmentLink').innerText = 'DISCOVER ' + title.toUpperCase();
+
+            // Remove fade-out classes and add fade-in classes for the new content
+            imageContainer.classList.remove('fade-out');
+            contentContainer.classList.remove('fade-out');
+            imageContainer.classList.add('fade-in');
+            contentContainer.classList.add('fade-in');
+        }, 500); // The duration of the fade-out animation
     }
+</script>
+<!-- Include the WOW.js library and Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<script>
+    // Initialize WOW.js
+    new WOW().init();
 </script>
 </body>
 </html>
