@@ -248,14 +248,14 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.3); /* Gradient color with opacity 0.3 */
+    /* background: rgba(255, 255, 255, 0.3); 
     background: linear-gradient(
         rgba(255, 255, 255, 0.3), 
         rgba(229, 232, 237, 0.3), 
         rgba(103, 106, 113, 0.3), 
         rgba(161, 161, 163, 0.3), 
         rgba(202, 203, 208, 0.3)
-    );
+    ); */
     z-index: 1; /* Place it below the content */
 }
 .hero-section .container {
@@ -851,7 +851,7 @@ button {
 
 /* Adding a unique symbol on hover */
 .treatment-list li:hover:before {
-    content: '➔ '; /* Change the symbol on hover */
+    content: '⎯ '; /* Change the symbol on hover */
     position: absolute;
     left: -20px;
     color: #CCCCCC; /* Color of the symbol on hover */
