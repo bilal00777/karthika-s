@@ -771,12 +771,12 @@ button {
     font-weight: bold;
     color: #fff;
     padding: 10px 25px;
-    background-color: #4a6345;
+    background-color: #676A71;
     border-radius: 30px;
 }
 
 .all-treatments-btn a:hover {
-    background-color: #3e523c;
+    background-color: #676a71c9;
 }
 
 
@@ -824,25 +824,37 @@ button {
 
 .treatment-list li {
     cursor: pointer;
-   
     position: relative;
-   
+    transition: all 0.3s ease; /* Smooth transition for all properties */
 }
 
 /* CSS for Active List Item */
 .treatment-list li.active {
-    color: #007bff; /* Change the active list item color */
+    color: #CCCCCC; /* Change the active list item color */
     position: relative;
     left: 40px; /* Move the item 40px to the right */
-    
 }
 
 .treatment-list li.active:before {
     content: '⎯ '; /* The symbol */
     position: absolute;
     left: -20px;
-    color: #007bff; /* Color of the symbol */
-  
+    color: #CCCCCC; /* Color of the symbol */
+}
+
+/* Hover Effect */
+.treatment-list li:hover {
+    color: #000000; /* Darker shade for hover effect */
+    transform: translateX(10px) scale(1.05); /* Move right and slightly enlarge */
+    background-color: rgba(112, 112, 112, 0.1); /* Light background color */
+}
+
+/* Adding a unique symbol on hover */
+.treatment-list li:hover:before {
+    content: '➔ '; /* Change the symbol on hover */
+    position: absolute;
+    left: -20px;
+    color: #CCCCCC; /* Color of the symbol on hover */
 }
 
 
@@ -909,7 +921,7 @@ button {
     background-color: rgb(218, 219, 224); /* Background color */
     color: #000000; /* Warm white color */
     text-align: center; /* Center the text */
-    padding: 20px 0; /* Vertical padding */
+    padding: 40px 0; /* Vertical padding */
     position: relative; /* Positioning context */
     bottom: 0; /* Align to the bottom */
     width: 100%; /* Full width */
@@ -921,7 +933,8 @@ button {
     color: #000000; /* Link color */
     text-decoration: none; /* Remove underline */
     margin: 0 15px; /* Horizontal margin */
-    font-size: small; /* Font size */
+    font-size: large; /* Font size */
+    margin-top: 70px;
 }
 
 .footer a:hover {
@@ -929,6 +942,6 @@ button {
 }
 
 .footer .copy-right {
-    margin-top: 10px; /* Space above copyright */
+    margin-top: 30px; /* Space above copyright */
     font-size: small; /* Font size for copyright */
 }
