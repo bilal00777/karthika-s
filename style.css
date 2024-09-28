@@ -43,7 +43,7 @@ header {
 
 .banner a {
     margin: 0 10px;
-    color: #0041da; /* Dark gray */
+    color:#676A71; /* Dark gray */
     text-decoration: none;
     
 }
@@ -681,6 +681,7 @@ button {
     padding: 50px;
     display: flex;
     align-items: center;
+    margin-top: -130px;
 }
 
 .promo-text {
